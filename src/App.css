@@ -12,7 +12,7 @@
   justify-content: center;
 }
 .menu-area{
-  border: 5px solid blue;
+  /* border: 5px solid blue; */
   /* height: 60px; */
   /* position: relative; */
   width: 100%;
@@ -33,7 +33,7 @@
   gap: 16px;
   flex-wrap: wrap;
   padding: 0;
-  border: 3px solid green;
+  /* border: 3px solid green; */
 }
 .menu-list li{
   height: 60px;
@@ -45,7 +45,7 @@
 
 .search-box{
   position: absolute;
-  border: 3px solid green;
+  /* border: 3px solid green; */
   right: 0;
   display: flex;
   align-items: center;
