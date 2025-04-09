@@ -3,6 +3,7 @@
   justify-content: flex-end;
   margin: 20px;
   align-items: center;
+  cursor: pointer;
 }
 .login-button div{
   margin-left: 8px;
@@ -92,4 +93,31 @@
     justify-content: flex-start;  /* 서치박스도 중앙 정렬 */
     margin-left: 0;  /* 오른쪽에서 왼쪽으로 이동 */
   }
+}
+
+.product-img{
+  width: 100%;
+}
+
+.product-img:hover{
+  width: 120%;
+  /* transform: translateX(-50%); */
+}
+
+.conscious{
+  padding: 4px;
+  padding-left: 8px;
+  background: #d1911b;
+  color: #fff;
+}
+.new{
+  background-color: rgb(106, 207, 202);
+  color: #fff;
+  display: inline-block;
+  padding: 4px;
+  border-radius: 10px;
+}
+.col{
+  /* border: 1px solid #000; */
+  margin-bottom: 60px;
 }
