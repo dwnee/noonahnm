@@ -1,38 +1,95 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.login-button{
   display: flex;
-  flex-direction: column;
+  justify-content: flex-end;
+  margin: 20px;
   align-items: center;
+}
+.login-button div{
+  margin-left: 8px;
+}
+.nav-section{
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.menu-area{
+  border: 5px solid blue;
+  /* height: 60px; */
+  /* position: relative; */
+  width: 100%;
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  justify-content:space-between;
+}
+.menu-list{
+  margin: 0;
+  display: flex;
+  list-style-type: none;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: auto;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 0;
+  border: 3px solid green;
+}
+.menu-list li{
+  height: 60px;
+  line-height: 60px;
+  white-space: nowrap;
+  width: auto;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.search-box{
+  position: absolute;
+  border: 3px solid green;
+  right: 0;
+  display: flex;
+  align-items: center;
+  height: 60px;
+  justify-content: flex-end;
+  margin-left: 0;
+  /* margin-left: auto; */
+  margin-right: 20px;
+  width: fit-content;
+}
+.search-box input{
+  padding: 8px;
+  margin-left: 8px;
+  border: none;
+  border-bottom: 1px solid black;
+}
+.search-box input:focus{
+  outline: none;
+  border-bottom: 2px solid black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 1080px) {
+  .menu-area {
+    flex-direction: column;  /* 세로 방향으로 배치 */
+    align-items: center;  /* 수평 중앙 정렬 */
   }
-  to {
-    transform: rotate(360deg);
+
+  .menu-list {
+    display: flex;
+    flex-wrap: wrap;  /* 메뉴 항목들이 줄 바꿈 */
+    justify-content: center;  /* 메뉴 항목들을 중앙 정렬 */
+    width: 100%;  /* 메뉴 영역이 화면의 100% 차지 */
+    margin: 10px 0;  /* 메뉴와 서치박스 간 간격 */
+  }
+
+  .menu-list li {
+    white-space: nowrap;
+    padding: 10px;
+  }
+
+  .search-box {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;  /* 서치박스도 중앙 정렬 */
+    margin-left: 0;  /* 오른쪽에서 왼쪽으로 이동 */
   }
 }
