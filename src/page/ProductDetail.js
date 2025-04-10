@@ -32,6 +32,14 @@ const ProductDetail = ({ sizes = [] }) => {
 
 
   const handleChange = (index, value) => {
+    if (value === "") {
+      const updatedQuantities = [...quantities];
+      updatedQuantities[index] = ""; // 비워두기
+      setQuantities(updatedQuantities);
+      setQuantityError("");
+      return;
+    }
+  
     let num = Number(value);
     if (num > 30) {
       setQuantityError("사이즈별 최대 구매 수량은 30입니다.");
@@ -42,12 +50,10 @@ const ProductDetail = ({ sizes = [] }) => {
     } else {
       setQuantityError(""); // 에러 메시지 초기화
     }
-
-
-
+  
     const updatedQuantities = [...quantities];
-    updatedQuantities[index] = num; // 특정 인덱스 값만 업데이트
-    setQuantities(updatedQuantities); // 상태 업데이트
+    updatedQuantities[index] = num;
+    setQuantities(updatedQuantities);
   };
   const handleArrowClick = (index) => {
     if (quantities[index] >= 30) {
@@ -61,7 +67,7 @@ const ProductDetail = ({ sizes = [] }) => {
   return (
     <Container>
       <Row>
-        <Col className="product-img">
+        <Col xs={12}className="product-detail-img">
           <img src={product?.img} />
         </Col>
         <Col className="product-detail">
@@ -77,7 +83,7 @@ const ProductDetail = ({ sizes = [] }) => {
                   <strong style={{ width: 40 }}>{size}</strong>
                   <Form.Control
                     type="number"
-                    value={quantities[index] || 1}
+                    value={quantities[index] !== undefined ? quantities[index] : ""}
                     min="1"
                     max="30"
                     step="1"
