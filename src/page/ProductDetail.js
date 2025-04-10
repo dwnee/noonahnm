@@ -67,10 +67,10 @@ const ProductDetail = ({ sizes = [] }) => {
   return (
     <Container>
       <Row>
-        <Col xs={12}className="product-detail-img">
+        <Col xs={12} lg={6}className="product-detail-img">
           <img src={product?.img} />
         </Col>
-        <Col className="product-detail">
+        <Col xs={12} lg={6}className="product-detail">
           <div className="product-title">{product?.title}</div>
           <div>{product?.price}</div>
           <div>{product?.choice === true ? "conscious choice" : ""}</div>

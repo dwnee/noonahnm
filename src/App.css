@@ -48,6 +48,7 @@
 }
 
 .search-box{
+  position: absolute;
   display: flex;
   right: 0;
   align-items: center;
@@ -161,6 +162,7 @@
 
   }
   .search-box {
+    position: relative;
     justify-content: center;
     width: 100%;
     height: auto;
