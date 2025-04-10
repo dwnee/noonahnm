@@ -16,6 +16,18 @@ const NavBar = ({authenticate, setAuthenticate}) => {
       navigate('/login');
     }
   }
+  const goToHome=()=>{
+    navigate('/')
+  }
+  const search = (event) =>{
+    if(event.key === "Enter"){
+      // 입력한 검색어를 읽어와서
+      let keyword = event.target.value
+      console.log(keyword, "keyword")
+      // url을 바꿔준다
+      navigate(`/?q=${keyword}`)
+    }
+  }
   return (
     <div>
       <div>
@@ -24,7 +36,7 @@ const NavBar = ({authenticate, setAuthenticate}) => {
           <div>{authenticate ? "로그아웃" : "로그인"}</div>
         </div>
       </div>
-      <div className="nav-section">
+      <div className="nav-section" onClick={goToHome}>
         <img width="100px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/H%26M-Logo.svg/800px-H%26M-Logo.svg.png"/>
       </div>
       <div>
@@ -36,7 +48,7 @@ const NavBar = ({authenticate, setAuthenticate}) => {
             </ul>
             <div className='search-box'>
               <FontAwesomeIcon icon={faSearch} />
-              <input type="text"/>
+              <input type="text" onKeyPress={(event)=>search(event)}/>
             </div>
         </div>
       </div>
