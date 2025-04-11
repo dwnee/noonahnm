@@ -1,7 +1,8 @@
-import React from 'react';
+import React,{ useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-regular-svg-icons'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from 'react-router';
 
 const NavBar = ({authenticate, setAuthenticate}) => {
@@ -28,6 +29,10 @@ const NavBar = ({authenticate, setAuthenticate}) => {
       navigate(`/?q=${keyword}`)
     }
   }
+  const [menuOpen, setMenuOpen] = useState(false)
+  const openMenuMobile = () => {
+    setMenuOpen(!menuOpen);
+  }
   return (
     <div>
       <div>
@@ -41,7 +46,9 @@ const NavBar = ({authenticate, setAuthenticate}) => {
       </div>
       <div>
         <div className="menu-area">
-            <ul className="menu-list">
+        <FontAwesomeIcon icon={faBars}className="icon-menu-hamburger" onClick={openMenuMobile}
+        />
+            <ul className={`menu-list ${menuOpen ? 'show-menu' : 'hide-menu'}`}>
               {menuList.map((menu)=> (
                 <li>{menu}</li>
             ))}

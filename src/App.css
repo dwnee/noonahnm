@@ -25,6 +25,10 @@
   flex-wrap: wrap;
   justify-content:space-between;
 }
+.icon-menu-hamburger{
+  /* border: 3px solid yellowgreen; */
+  visibility:hidden;
+}
 .menu-list{
   margin: 0;
   display: flex;
@@ -159,7 +163,47 @@
 }
 @media(max-width : 780px){
   .menu-area{
-
+  }
+  .icon-menu-hamburger{
+    visibility: visible;
+    font-size: 45px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 8px 0 0 8px;
+  }
+  .menu-list {
+    gap:0px;
+    margin: 0;
+    padding: 0;
+    top: 60px;
+    position: absolute;
+    /* display: none; */
+    width: fit-content;
+    height: auto;
+    align-items: start;
+    flex-direction: column;
+    /* border: 1px solid #000; */
+    background-color: white;
+    z-index: 99;
+  }
+  /* 기본적으로 안보이게 */
+.hide-menu {
+  display: none;
+}
+/* 햄버거 클릭 시 보이게 */
+.show-menu {
+  display: flex;
+}
+  .menu-list li{
+    padding-left: 8px;
+    padding-right: 8px;
+    width: auto;
+    height: 80px;
+    line-height: 80px;
+    border-bottom: 1px solid #000;
+    /* border-top: 3px solid burlywood; */
+    background-color: #fff;
   }
   .search-box {
     position: relative;
